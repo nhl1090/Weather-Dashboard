@@ -1,4 +1,8 @@
+//API key
 const apiKey = 
+
+let lastSearch =
+
 const Form =
 const Input =
 

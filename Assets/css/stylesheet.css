@@ -3,23 +3,36 @@ body {
     margin: 0;
     padding: 0;
     background-color: bisque;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
-}
-
-
-#weather-app {
-    max-width: 800px;
-    margin: 18px auto;
-    padding: 18px;
+    color: white;
+    font-size: 44px;
+    maring: 0;
+    padding: 0;
 }
 
 form {
+    text-align: center;
     display: flex;
     justify-content: center;
     margin-bottom: 18px;
+}
+
+input {
+    text-align: center;
+}
+
+button {
+    text-align: center;
+}
+
+#city-form {
+    max-width: 800px;
+    margin: 18px auto;
+    padding: 18px;
 }
 
 #location {
