@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather-Dashboard></title>
-    <link rel="stylesheet" href="./Assets/css/stylesheet.css"
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 <body>
-    <div id="city-form">
-        <h1>Weather-Dashboard</h1>
-        <!--Added location form with input and submit buttons-->
-        <form id="form"
-            <div id="form title"> Enter Location</div>
-            <input type="text" id="location input">
-            <button type="submit">Submit</button>
-    </form>
+    <div id="app">
+        <h1>Weather Dashboard</h1>
+        <form id="city-form">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button type="submit">Search</button>
+        </form>
+        <div id="current-weather">
+            <!-- Current weather -->
+        </div>
+        <div id="forecast">
+            <!-- 5-day forecast -->
+        </div>
+        <div id="search-history">
+            <h2>Search History</h2>
+            <ul id="history-list">
+                <!-- Search history-->
+            </ul>
+        </div>
     </div>
-    <script src="/Assets/js/js.js"></script>
+    <script src="./Assets/js/script"></script>
 </body>
 </html>
