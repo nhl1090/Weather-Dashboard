@@ -58,14 +58,21 @@ function getWeather(lat, lon, city) {
         .then(data => displayForecast(data))
 }
 
-//function for displayingcurrent weather
-function displayCurrentWeather() {
-
+//function for displaying current weather
+function displayCurrentWeather(data, city) {
+    const weatherHTML = ``;
+    currentWeatherDiv.innerHTML = weatherHTML;
 }
 
 //function for displaying forecast
 function displayForecast() {
-
+    forecastDiv.innerHTML = '';
+    for (let i = 0; i < data.list.length; i += 8) {
+        const forecast = data.list[i];
+        const forecastHTML = ``
+        ;
+        forecastDiv.innerHTML += forecastHTML;
+    }
 }
 
 //function for search history
