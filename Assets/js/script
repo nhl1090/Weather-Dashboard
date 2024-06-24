@@ -13,17 +13,35 @@ let searchHistory = [];
 
 //Function for Form
 cityForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const city = cityInput.value.trim();
+    if (city) {
+        getCoordinates(city);
+        addToHistory(city);
+        cityInput.value = '';
+    }
+});
+
+historyList.addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+        const city = event.target.textContent;
+        getCoordinates(city);
+    }
 });
 
 //function for coordinates
-function getCoordinates() {
+function getCoordinates(city) {
 
 }
+
 //function for retrieving weather
 function getWeather() {
+
 }
+
 //function for displayingcurrent weather
 function displayCurrentWeather() {
+
 }
 
 //function for displaying forecast
