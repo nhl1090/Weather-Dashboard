@@ -1,26 +1,37 @@
-//API key
-const apiKey = 
+//API Key
+const apiKey = '3486951f861301667f6e3ee3e0064c8b';
+
+//Must match HTML
 const cityForm = document.getElementById('city-form');
 const cityInput = document.getElementById('city-input');
 const currentWeatherDiv = document.getElementById('current-weather');
 const forecastDiv = document.getElementById('forecast');
 const historyList = document.getElementById('history-list');
 
-let lastSearch =
+//Previous cities searched
+let searchHistory = [];
 
+//Function for Form
+cityForm.addEventListener('submit', function(event) {
+});
 
+//function for coordinates
+function getCoordinates() {
 
-const Form =
-const Input =
+}
+//function for retrieving weather
+function getWeather() {
+}
+//function for displayingcurrent weather
+function displayCurrentWeather() {
+}
 
-let city;
+//function for displaying forecast
+function displayForecast() {
 
-const queryUrl = 
+}
 
-fetch(queryUrl)
-    .then(function () {
-    return
-)}
-    .then(function
+//function for search history
+function addToHistory() {
 
-    )
+}
