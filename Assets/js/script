@@ -31,12 +31,31 @@ historyList.addEventListener('click', function(event) {
 
 //function for coordinates
 function getCoordinates(city) {
-
+    function getCoordinates(city) {
+        //Fetch API Key
+        fetch('')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const { lat, lon } = data[0];
+                    getWeather(lat, lon, city);
+                } else {
+                    alert('City not found');
+                }
+            })
+            .catch(error => console.error('Error fetching coordinates:', error));
+    }
 }
 
-//function for retrieving weather
-function getWeather() {
+//Adding functions for retrieving weather according to latitude and longititude, and city information
+function getWeather(lat, lon, city) {
+    fetch(``)
+        .then(response => response.json())
+        .then(data => displayCurrentWeather(data, city));
 
+    fetch(``)
+        .then(response => response.json())
+        .then(data => displayForecast(data))
 }
 
 //function for displayingcurrent weather
