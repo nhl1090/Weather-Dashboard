@@ -1,5 +1,5 @@
 // API Key
-const apiKey = `3486951f861301667f6e3ee3e0064c8b`;
+const apiKey = '3486951f861301667f6e3ee3e0064c8b';
 
 // Must match HTML
 const cityForm = document.getElementById('city-form');
@@ -7,7 +7,6 @@ const cityInput = document.getElementById('city-input');
 const currentWeatherDiv = document.getElementById('current-weather');
 const forecastDiv = document.getElementById('forecast');
 const historyList = document.getElementById('history-list');
-const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
 // Previous cities searched
 let searchHistory = [];
@@ -32,7 +31,8 @@ historyList.addEventListener('click', function(event) {
 
 // Function for coordinates
 function getCoordinates(city) {
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`)
+    const queryURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
+    fetch(queryURL)
         .then(response => response.json())
         .then(data => {
             if (data.length > 0) {
@@ -47,12 +47,14 @@ function getCoordinates(city) {
 
 // Adding functions for retrieving weather according to latitude and longitude, and city information
 function getWeather(lat, lon, city) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+    const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    fetch(currentWeatherURL)
         .then(response => response.json())
         .then(data => displayCurrentWeather(data, city))
         .catch(error => console.error('Error fetching current weather:', error));
 
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    fetch(forecastURL)
         .then(response => response.json())
         .then(data => displayForecast(data))
         .catch(error => console.error('Error fetching forecast:', error));
