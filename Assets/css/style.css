@@ -11,6 +11,7 @@ h1 {
     font-size: 44px;
 }
 
+/* Form styling */
 form {
     display: flex;
     justify-content: center;
@@ -37,6 +38,7 @@ button:hover {
     background-color: darkblue;
 }
 
+/* App container styling */
 #app {
     max-width: 600px;
     margin: 20px auto;
@@ -46,11 +48,12 @@ button:hover {
     box-shadow: 0 0 10px black;
 }
 
-/*Consolidated styling*/
+/* Consolidated sytling */
 #current-weather, #forecast, #search-history {
     margin-bottom: 20px;
 }
 
+/* Search history styling */
 #search-history ul {
     list-style-type: none;
     padding: 0;

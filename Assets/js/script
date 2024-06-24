@@ -1,17 +1,18 @@
-//API Key
-const apiKey = '3486951f861301667f6e3ee3e0064c8b';
+// API Key
+const apiKey = `3486951f861301667f6e3ee3e0064c8b`;
 
-//Must match HTML
+// Must match HTML
 const cityForm = document.getElementById('city-form');
 const cityInput = document.getElementById('city-input');
 const currentWeatherDiv = document.getElementById('current-weather');
 const forecastDiv = document.getElementById('forecast');
 const historyList = document.getElementById('history-list');
+const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
-//Previous cities searched
+// Previous cities searched
 let searchHistory = [];
 
-//Function for Form
+// Function for Form
 cityForm.addEventListener('submit', function(event) {
     event.preventDefault();
     const city = cityInput.value.trim();
@@ -29,7 +30,7 @@ historyList.addEventListener('click', function(event) {
     }
 });
 
-//function for coordinates
+// Function for coordinates
 function getCoordinates(city) {
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`)
         .then(response => response.json())
@@ -44,18 +45,20 @@ function getCoordinates(city) {
         .catch(error => console.error('Error fetching coordinates:', error));
 }
 
-//Adding functions for retrieving weather according to latitude and longititude, and city information
+// Adding functions for retrieving weather according to latitude and longitude, and city information
 function getWeather(lat, lon, city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
         .then(response => response.json())
-        .then(data => displayCurrentWeather(data, city));
+        .then(data => displayCurrentWeather(data, city))
+        .catch(error => console.error('Error fetching current weather:', error));
 
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
         .then(response => response.json())
-        .then(data => displayForecast(data));
+        .then(data => displayForecast(data))
+        .catch(error => console.error('Error fetching forecast:', error));
 }
 
-//function for displaying current weather
+// Function for displaying current weather
 function displayCurrentWeather(data, city) {
     const weatherHTML = `
         <h2>${city}</h2>
@@ -67,7 +70,8 @@ function displayCurrentWeather(data, city) {
     `;
     currentWeatherDiv.innerHTML = weatherHTML;
 }
-//function for displaying forecast
+
+// Function for displaying forecast
 function displayForecast(data) {
     forecastDiv.innerHTML = '<h2>5-Day Forecast</h2>';
     for (let i = 0; i < data.list.length; i += 8) { // OpenWeatherMap provides data every 3 hours; 8 intervals represent a day
@@ -85,7 +89,7 @@ function displayForecast(data) {
     }
 }
 
-//function for search history
+// Function for search history
 function addToHistory(city) {
     if (!searchHistory.includes(city)) {
         searchHistory.push(city);
