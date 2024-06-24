@@ -7,7 +7,6 @@ body {
 }
 
 h1 {
-    text-align: center;
     color: black;
     font-size: 44px;
 }
@@ -34,7 +33,7 @@ button {
     cursor: pointer;
 }
 
-form button:hover {
+button:hover {
     background-color: darkblue;
 }
 
@@ -70,4 +69,3 @@ form button:hover {
 #search-history li:hover {
     background-color: whitesmoke;
 }
-
