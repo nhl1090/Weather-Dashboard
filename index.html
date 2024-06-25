@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 <body>
-    <div id="app">
-        <h1>Weather Dashboard</h1>
+    <h1>Weather Dashboard</h1>
+    <section id="city-form-section">
         <form id="city-form">
             <input type="text" id="city-input" placeholder="Enter city name">
             <button type="submit">Search</button>
         </form>
-        <div id="current-weather">
-        </div>
-        <div id="forecast">
-        </div>
-        <div id="search-history">
-            <h2>Search History</h2>
-            <ul id="history-list">
-            </ul>
-        </div>
-    </div>
+    </section>
+    <section id="current-weather-section">
+        <div id="current-weather"></div>
+    </section>
+    <section id="forecast-section">
+        <div id="forecast"></div>
+    </section>
+    <section id="search-history-section">
+        <h2>Search History</h2>
+        <ul id="history-list"></ul>
+    </section>
     <script src="./Assets/js/script.js"></script>
 </body>
 </html>

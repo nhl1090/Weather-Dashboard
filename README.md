@@ -16,13 +16,15 @@ Example:
 
 I referred to the following sites for guidance on the project:
 
+- AccuWeather (https://www.accuweather.com/)
 - edX (https://www.edx.org/)
 - MDN (https://developer.mozilla.org/en-US/)
+- National Weather Service (https://www.weather.gov/)
 - OpenWeather (https://openweathermap.org/)
 - Stackoverflow (https://stackoverflow.com/)
+- The Weather Channel (https://weather.com/)
 - UT Coding Bootcamp (https://git.bootcampcontent.com/University-of-Texas-at-Austin/UTA-VIRT-FSF-PT-05-2024-U-LOLC)
 - W3 Schools (https://www.w3schools.com/)
-
 ## License
 
 MIT License.

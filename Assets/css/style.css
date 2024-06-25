@@ -8,10 +8,19 @@ body {
 
 h1 {
     color: black;
-    font-size: 44px;
+    font-size: 36px;
+    margin-top: 20px;
 }
 
-/* Form styling */
+#city-form-section, #current-weather-section, #forecast-section, #search-history-section {
+    max-width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px black;
+}
+
 form {
     display: flex;
     justify-content: center;
@@ -21,6 +30,7 @@ form {
 input {
     padding: 10px;
     width: 70%;
+    max-width: 300px;
     border: 1px solid lightgray;
     border-radius: 4px;
 }
@@ -32,39 +42,32 @@ button {
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 5px;
 }
 
 button:hover {
     background-color: darkblue;
 }
 
-/* App container styling */
-#app {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px black;
-}
-
-/* Current weather styling */
 #current-weather {
+    max-width: 40%;
     background-color: lightcyan;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px black;
     margin-bottom: 20px;
-    display: none; /* Initially hidden */
+    display: none;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 #current-weather h2 {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 10px;
 }
 
 #current-weather p {
-    font-size: 18px;
+    font-size: 16px;
     margin: 5px 0;
 }
 
@@ -73,12 +76,10 @@ button:hover {
     margin: 0 auto;
 }
 
-/* Forecasted weather styling */
 #forecast, #search-history {
     margin-bottom: 20px;
 }
 
-/* Search history styling */
 #search-history ul {
     list-style-type: none;
     padding: 0;
@@ -100,22 +101,38 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Forecast container styling */
 #forecast {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
 }
 
-/* Forecast day styling */
 .forecast-day {
     background-color: lightgray;
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
-    flex: 1 1 150px;
-    max-width: 400px;
+    flex: 1 1 calc(50% - 20px);
+    max-width: 45%;
     box-sizing: border-box;
     text-align: center;
+}
+
+@media (max-width: 600px) {
+    .forecast-day {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #current-weather h2 {
+        font-size: 24px;
+    }
+
+    #current-weather p {
+        font-size: 14px;
+    }
 }

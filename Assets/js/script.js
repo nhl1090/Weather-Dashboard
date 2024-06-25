@@ -1,20 +1,15 @@
-// API Key
 const apiKey = '3486951f861301667f6e3ee3e0064c8b';
 
-// Must match HTML
 const cityForm = document.getElementById('city-form');
 const cityInput = document.getElementById('city-input');
 const currentWeatherDiv = document.getElementById('current-weather');
 const forecastDiv = document.getElementById('forecast');
 const historyList = document.getElementById('history-list');
 
-// Hide the current weather div initially
 currentWeatherDiv.style.display = 'none';
 
-// Previous cities searched
 let searchHistory = [];
 
-// Function for Form
 cityForm.addEventListener('submit', function(event) {
     event.preventDefault();
     const city = cityInput.value.trim();
@@ -32,7 +27,6 @@ historyList.addEventListener('click', function(event) {
     }
 });
 
-// Function for coordinates
 function getCoordinates(city) {
     const queryURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
     fetch(queryURL)
@@ -48,7 +42,6 @@ function getCoordinates(city) {
         .catch(error => console.error('Error fetching coordinates:', error));
 }
 
-// Adding functions for retrieving weather according to latitude and longitude, and city information
 function getWeather(lat, lon, city) {
     const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     fetch(currentWeatherURL)
@@ -63,7 +56,6 @@ function getWeather(lat, lon, city) {
         .catch(error => console.error('Error fetching forecast:', error));
 }
 
-// Function for displaying current weather
 function displayCurrentWeather(data, city) {
     const weatherHTML = `
         <h2>${city}</h2>
@@ -74,11 +66,9 @@ function displayCurrentWeather(data, city) {
         <p>Wind Speed: ${data.wind.speed} m/s</p>
     `;
     currentWeatherDiv.innerHTML = weatherHTML;
-    // Show the current weather div
     currentWeatherDiv.style.display = 'block';
 }
 
-// Function for displaying forecast
 function displayForecast(data) {
     forecastDiv.innerHTML = '<h2>5-Day Forecast</h2>';
     const dailyData = data.list.filter(reading => reading.dt_txt.includes("12:00:00"));
@@ -96,7 +86,6 @@ function displayForecast(data) {
     });
 }
 
-// Function for search history
 function addToHistory(city) {
     if (!searchHistory.includes(city)) {
         searchHistory.push(city);
