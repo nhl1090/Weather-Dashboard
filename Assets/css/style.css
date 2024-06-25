@@ -40,7 +40,7 @@ button:hover {
 
 /* App container styling */
 #app {
-    max-width: 600;
+    max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     background-color: white;
@@ -72,7 +72,6 @@ button:hover {
     margin: 0 auto;
 }
 
-
 /* Forecasted weather styling */
 #forecast, #search-history {
     margin-bottom: 20px;
@@ -86,13 +85,18 @@ button:hover {
 
 #search-history li {
     padding: 10px;
-    background-color: white;
+    background-color: lightcyan;
     margin-bottom: 5px;
     cursor: pointer;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 #search-history li:hover {
-    background-color: whitesmoke;
+    background-color: #e6f7ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Forecast container styling */
@@ -109,7 +113,7 @@ button:hover {
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
-    flex: 1 1 150px; 
+    flex: 1 1 150px;
     max-width: 400px;
     box-sizing: border-box;
     text-align: center;
