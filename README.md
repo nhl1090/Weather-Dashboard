@@ -6,7 +6,7 @@
 N/A
 
 ## Usage
-My live application can be found here: https://nhl1090.github.io/Task-Board/
+My live application can be found here: https://nhl1090.github.io/Weather-Dashboard/
 
 Example:
 
