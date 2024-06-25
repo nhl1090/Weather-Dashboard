@@ -10,7 +10,8 @@ N/A
 ## Usage
 My live application can be found here: https://nhl1090.github.io/Weather-Dashboard/
 
-Example:
+Image:
+![alt text](image.png)
 
 ## Credits
 

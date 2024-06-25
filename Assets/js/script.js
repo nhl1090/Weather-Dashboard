@@ -4,6 +4,7 @@ const cityForm = document.getElementById('city-form');
 const cityInput = document.getElementById('city-input');
 const currentWeatherDiv = document.getElementById('current-weather');
 const forecastDiv = document.getElementById('forecast');
+const forecastTextDiv = document.getElementById('forecast-text');
 const historyList = document.getElementById('history-list');
 
 currentWeatherDiv.style.display = 'none';
@@ -70,7 +71,8 @@ function displayCurrentWeather(data, city) {
 }
 
 function displayForecast(data) {
-    forecastDiv.innerHTML = '<h2>5-Day Forecast</h2>';
+    forecastTextDiv.innerHTML = '<h2>5-Day Forecast</h2>'; // Add text for 5-day forecast
+    forecastDiv.innerHTML = '';
     const dailyData = data.list.filter(reading => reading.dt_txt.includes("12:00:00"));
     dailyData.forEach(day => {
         const forecastHTML = `
