@@ -8,6 +8,9 @@ const currentWeatherDiv = document.getElementById('current-weather');
 const forecastDiv = document.getElementById('forecast');
 const historyList = document.getElementById('history-list');
 
+// Hide the current weather div initially
+currentWeatherDiv.style.display = 'none';
+
 // Previous cities searched
 let searchHistory = [];
 
@@ -71,6 +74,8 @@ function displayCurrentWeather(data, city) {
         <p>Wind Speed: ${data.wind.speed} m/s</p>
     `;
     currentWeatherDiv.innerHTML = weatherHTML;
+    // Show the current weather div
+    currentWeatherDiv.style.display = 'block';
 }
 
 // Function for displaying forecast
