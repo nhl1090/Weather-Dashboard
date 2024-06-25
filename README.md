@@ -1,6 +1,8 @@
 # Weather-Dashboard
 
 ## Description
+This application is designed to show you the weather forecast for a specific city in mind. There are many like it, but this one is mine!
+
 
 ## Installation
 N/A
@@ -14,7 +16,9 @@ Example:
 
 I referred to the following sites for guidance on the project:
 
+- edX (https://www.edx.org/)
 - MDN (https://developer.mozilla.org/en-US/)
+- OpenWeather (https://openweathermap.org/)
 - Stackoverflow (https://stackoverflow.com/)
 - UT Coding Bootcamp (https://git.bootcampcontent.com/University-of-Texas-at-Austin/UTA-VIRT-FSF-PT-05-2024-U-LOLC)
 - W3 Schools (https://www.w3schools.com/)

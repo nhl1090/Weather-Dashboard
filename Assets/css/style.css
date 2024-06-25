@@ -48,8 +48,33 @@ button:hover {
     box-shadow: 0 0 10px black;
 }
 
-/* Consolidated sytling */
-#current-weather, #forecast, #search-history {
+/* Current weather styling */
+#current-weather {
+    background-color: lightcyan;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px black;
+    margin-bottom: 20px;
+}
+
+#current-weather h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+#current-weather p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+#current-weather img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Forecasted weather styling */
+#forecast, #search-history {
     margin-bottom: 20px;
 }
 
