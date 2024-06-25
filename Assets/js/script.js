@@ -76,19 +76,19 @@ function displayCurrentWeather(data, city) {
 // Function for displaying forecast
 function displayForecast(data) {
     forecastDiv.innerHTML = '<h2>5-Day Forecast</h2>';
-    for (let i = 0; i < data.list.length; i += 8) { // OpenWeatherMap provides data every 3 hours; 8 intervals represent a day
-        const forecast = data.list[i];
+    const dailyData = data.list.filter(reading => reading.dt_txt.includes("12:00:00"));
+    dailyData.forEach(day => {
         const forecastHTML = `
-            <div>
-                <p>Date: ${new Date(forecast.dt_txt).toLocaleDateString()}</p>
-                <p><img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="${forecast.weather[0].description}"></p>
-                <p>Temperature: ${forecast.main.temp} °C</p>
-                <p>Humidity: ${forecast.main.humidity} %</p>
-                <p>Wind Speed: ${forecast.wind.speed} m/s</p>
+            <div class="forecast-day">
+                <p>Date: ${new Date(day.dt_txt).toLocaleDateString()}</p>
+                <p><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}.png" alt="${day.weather[0].description}"></p>
+                <p>Temperature: ${day.main.temp} °C</p>
+                <p>Humidity: ${day.main.humidity} %</p>
+                <p>Wind Speed: ${day.wind.speed} m/s</p>
             </div>
         `;
         forecastDiv.innerHTML += forecastHTML;
-    }
+    });
 }
 
 // Function for search history

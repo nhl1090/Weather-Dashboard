@@ -69,3 +69,11 @@ button:hover {
 #search-history li:hover {
     background-color: whitesmoke;
 }
+
+/* Forecast day styling */
+.forecast-day {
+    background-color: lightgray;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
