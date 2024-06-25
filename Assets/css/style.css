@@ -8,7 +8,7 @@ body {
 
 h1 {
     color: black;
-    font-size: 36px;
+    font-size: 50px;
     margin-top: 20px;
 }
 
@@ -49,25 +49,30 @@ button:hover {
     background-color: darkblue;
 }
 
+#current-weather-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #current-weather {
     max-width: 40%;
     background-color: lightcyan;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px black;
-    margin-bottom: 20px;
     display: none;
     box-sizing: border-box;
     text-align: center;
 }
 
 #current-weather h2 {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 10px;
 }
 
 #current-weather p {
-    font-size: 16px;
+    font-size: 20px;
     margin: 5px 0;
 }
 
@@ -97,7 +102,7 @@ button:hover {
 }
 
 #search-history li:hover {
-    background-color: #e6f7ff;
+    background-color: light;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -125,14 +130,14 @@ button:hover {
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     #current-weather h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     #current-weather p {
-        font-size: 14px;
+        font-size: 18px;
     }
 }
