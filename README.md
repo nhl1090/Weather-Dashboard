@@ -30,7 +30,7 @@ https://nhl1090.github.io/Weather-Dashboard/
 This project is licensed under the ![MIT license](https://opensource.org/license/MIT).
 
 
-## Credits
+## Contributing
 - AccuWeather
     (https://www.accuweather.com/)
 - Atlassian
